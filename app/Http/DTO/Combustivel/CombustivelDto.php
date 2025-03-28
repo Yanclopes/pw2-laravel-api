@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\DTO\Gasolina;
+namespace App\Http\DTO\Combustivel;
 
-use App\Http\Requests\Gasolina\CalcularGastoRequest;
+use App\Http\Requests\Combustivel\CalcularGastoRequest;
 
-class GasolinaDto
+class CombustivelDto
 {
     public int $combustivel;
     public float $valor;

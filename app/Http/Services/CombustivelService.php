@@ -2,20 +2,20 @@
 
 namespace App\Http\Services;
 
-use App\Http\DTO\Gasolina\GasolinaDto;
-use App\Models\Gasolina;
+use App\Http\DTO\Combustivel\CombustivelDto;
+use App\Models\Combustivel;
 
-class GasolinaService
+class CombustivelService
 {
     /**
      * Calcula o gasto total de combustível com base na distância, consumo e preço do combustível.
      *
-     * @param GasolinaDto $gasolinaDto
+     * @param CombustivelDto $gasolinaDto
      * @return array
      */
-    public function calcularGasto(GasolinaDto $gasolinaDto): array
+    public function calcularGasto(CombustivelDto $gasolinaDto): array
     {
-        $gasolina = new Gasolina($gasolinaDto->toArray());
+        $gasolina = new Combustivel($gasolinaDto->toArray());
         $litrosNecessarios = $gasolina->distancia / $gasolina->gasto;
         $gastoTotal = $litrosNecessarios * $gasolina->valor;
         return [

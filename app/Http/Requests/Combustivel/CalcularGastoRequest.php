@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Requests\Gasolina;
+namespace App\Http\Requests\Combustivel;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Gasolina;
+use App\Models\Combustivel;
 
 class CalcularGastoRequest extends FormRequest
 {
@@ -15,7 +15,7 @@ class CalcularGastoRequest extends FormRequest
     public function rules()
     {
         return [
-            'combustivel' => 'required|integer|in:' . implode(',', Gasolina::tiposCombustivel()),
+            'combustivel' => 'required|integer|in:' . implode(',', Combustivel::tiposCombustivel()),
             'valor' => 'required|numeric|min:0.1',
             'gasto' => 'required|numeric|min:0.1',
             'distancia' => 'required|integer|min:1',

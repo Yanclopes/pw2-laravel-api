@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Gasolina extends Authenticatable
+class Combustivel extends Authenticatable
 {
     use HasFactory, Notifiable;
 
@@ -37,6 +37,21 @@ class Gasolina extends Authenticatable
             self::GASOLINA,
             self::DIESEL,
             self::GNV,
+        ];
+    }
+
+    /**
+     * Retorna os tipos de combustível permitidos.
+     *
+     * @return array
+     */
+    public static function listCombustiveis(): array
+    {
+        return [
+            self::ETANOL => 'Etanol',
+            self::GASOLINA => 'Gasolina',
+            self::DIESEL => 'Diesel',
+            self::GNV => 'GNV',
         ];
     }
 }
